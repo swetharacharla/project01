@@ -11,7 +11,7 @@ resource "azurerm_virtual_network" "prod-vn" {
   name                = var.vn-01
   location            = azurerm_resource_group.prod-rg.location
   resource_group_name = azurerm_resource_group.prod-rg.name
-  address_space       = "var.address-space"
+  address_space       = var.address-space
 }
 resource "azurerm_subnet" "prod-subnet" {
   name                 = var.subnet-01
@@ -25,7 +25,7 @@ resource "azurerm_network_interface" "prod-nic" {
   location            = azurerm_resource_group.prod-rg.location
   ip_configuration {
     name                          = "internal"
-    subnet_id                     = azurerm_subnet.prod-subnet
+    subnet_id                     = azurerm_subnet.prod-subnet.id
     private_ip_address_allocation = "Dynamic"
   }
 }
