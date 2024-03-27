@@ -20,7 +20,7 @@ variable "subnet-01" {
 }
 variable "address-space" {
   description = "addresses for the vn"
-  type        = string
+  type        = list(any)
   default     = ["10.0.0.0/8"]
 
 }
