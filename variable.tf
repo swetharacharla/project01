@@ -39,3 +39,8 @@ variable "vm-01" {
   type        = string
   default     = "prod-dt-vm"
 }
+variable "strg-01" {
+  description = "name of the storage account"
+  type        = string
+  default     = "proddtstorage"
+}
