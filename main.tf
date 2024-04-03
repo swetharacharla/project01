@@ -74,12 +74,12 @@ resource "azurerm_storage_account" "prod-storage" {
 
 }
 resource "azurerm_mssql_server" "prod-server" {
-  name                         = "prod-auseast-sql-server"
+  name                         = "prod-swetha-auseast-sql-server"
   resource_group_name          = azurerm_resource_group.prod-rg.name
   location                     = azurerm_resource_group.prod-rg.location
   version                      = "12.0"
   administrator_login          = "swethaprod123"
-  administrator_login_password = "cloud12345"
+  administrator_login_password = "Swettharacharla12345"
 }
 
 resource "azurerm_mssql_database" "prod-mssql_database" {
