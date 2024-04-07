@@ -91,6 +91,4 @@ resource "azurerm_mssql_database" "prod-mssql_database" {
   sku_name                            = "BC_Gen5_2"
   storage_account_type                = "Local"
   transparent_data_encryption_enabled = true
-
-
 }
