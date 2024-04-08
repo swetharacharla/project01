@@ -44,3 +44,9 @@ variable "strg-01" {
   type        = string
   default     = "proddtstorage"
 }
+variable "keyvault" {
+  description = "name of the keyvault"
+  type = string
+  default = "prod-dt-keyvault"
+  
+}
