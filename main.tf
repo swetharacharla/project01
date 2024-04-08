@@ -82,7 +82,7 @@ resource "azurerm_mssql_server" "prod-server" {
   administrator_login_password = "cloud12345"
 }
 
-resource "azurerm_mssql_database" "prod-mssql_database" {
+resource "azurerm_mssql_database" "prod-mssql-database" {
   name                                = "prod-auseast-sqldb"
   server_id                           = azurerm_mssql_server.prod-server.id
   collation                           = "SQL_Latin1_General_CP1_CI_AS"
@@ -91,4 +91,14 @@ resource "azurerm_mssql_database" "prod-mssql_database" {
   sku_name                            = "BC_Gen5_2"
   storage_account_type                = "Local"
   transparent_data_encryption_enabled = true
+}
+#configuration for keyvault
+
+resource "azurerm_key_vault" "prod-key-vault" {
+  name = var.keyvault
+  location = azurerm_resource_group.prod-rg.location
+  resource_group_name = azurerm_resource_group.prod-rg.name
+  sku_name = "standard"
+  tenant_id = "1da97bf4-3fd5-466a-b5df-9079683ee507"
+  
 }
